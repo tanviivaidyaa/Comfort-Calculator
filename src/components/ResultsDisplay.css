@@ -1,0 +1,243 @@
+.results-container {
+  animation: slideUp 0.5s ease-out;
+}
+
+.results-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.results-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.results-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.income-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.income-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.income-card:hover {
+  transform: translateY(-5px);
+}
+
+.income-card.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.income-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.income-card.primary .income-label {
+  opacity: 1;
+}
+
+.income-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.income-sublabel {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.income-card.secondary {
+  color: #2d3748;
+}
+
+.breakdown-section,
+.indices-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.breakdown-section h3,
+.indices-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.breakdown-item:hover {
+  background: #edf2f7;
+  transform: translateX(5px);
+}
+
+.breakdown-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.breakdown-content {
+  flex: 1;
+}
+
+.breakdown-label {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.breakdown-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.indices-description {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.indices-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.index-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.index-bar-container {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.index-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.index-bar.purchasing-power {
+  background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
+}
+
+.index-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index-label {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.index-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  color: #4a5568;
+}
+
+.info-box svg {
+  flex-shrink: 0;
+  color: #667eea;
+  margin-top: 0.125rem;
+}
+
+.info-box p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .income-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .income-value {
+    font-size: 2rem;
+  }
+
+  .breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .breakdown-section,
+  .indices-section {
+    padding: 1.5rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+}

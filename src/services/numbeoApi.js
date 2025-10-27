@@ -1,7 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-// Numbeo API endpoint
-const NUMBEO_API_BASE = 'https://www.numbeo.com/api';
+// Numbeo API endpoint (for future use with API key)
+// const NUMBEO_API_BASE = 'https://www.numbeo.com/api';
 
 /**
  * Fetch cost of living data from Numbeo API
@@ -13,7 +13,7 @@ export const fetchCostOfLiving = async (city) => {
     // Since Numbeo's free API is limited, we'll use a combination of their public data
     // and calculations based on typical cost of living patterns
     
-    // For a real implementation with API key, use:
+    // For a real implementation with API key, uncomment axios import and use:
     // const response = await axios.get(`${NUMBEO_API_BASE}/city_prices`, {
     //   params: {
     //     api_key: 'YOUR_API_KEY',
@@ -116,7 +116,7 @@ const simulateNumbeoData = async (city) => {
  * Calculate comfortable income based on cost of living data
  */
 const calculateComfortIncome = (costData) => {
-  const { costOfLivingIndex, rentIndex, groceriesIndex, restaurantPriceIndex, localPurchasingPowerIndex } = costData;
+  const { costOfLivingIndex, rentIndex, groceriesIndex, restaurantPriceIndex } = costData;
   
   // Base monthly costs in NYC (used as reference point)
   const nycBaseCosts = {
